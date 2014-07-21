@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="Zongsoft.Terminals"
+        title="Zongsoft Terminals Plugin"
+        author="Popeye Zhong(zongsoft@gmail.com)"
+        version="3.1.1310"
+        copyright="Copyright (C) 2010-2013 Zongsoft Corporation. All rights reserved."
+        description="Modified Date: 2013-10 by Popeye Zhong">
+
+	<manifest>
+		<dependencies>
+			<dependency name="Main" />
+		</dependencies>
+	</manifest>
+
+	<extension path="/Workbench/Terminal">
+		<object name="Executor" value="{path:/Workbench.Executor}" />
+		<object name="Commands" value="{path:/Workbench.Executor.Root.Children}" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands">
+		<object name="Exit" type="Zongsoft.Terminals.Commands.ExitCommand, Zongsoft.CoreLibrary" />
+		<object name="Help" type="Zongsoft.Terminals.Commands.HelpCommand, Zongsoft.CoreLibrary" />
+		<object name="Clear" type="Zongsoft.Terminals.Commands.ClearCommand, Zongsoft.CoreLibrary" />
+		<object name="Shell" type="Zongsoft.Terminals.Commands.ShellCommand, Zongsoft.CoreLibrary" />
+		<object name="Assembly" type="Zongsoft.Terminals.Commands.AssemblyCommand, Zongsoft.Terminals" />
+
+		<commandNode name="Services" type="Zongsoft.Terminals.Commands.ServicesCommand, Zongsoft.Terminals" >
+			<commandNode name="Get" type="Zongsoft.Terminals.Commands.ServicesGetCommand, Zongsoft.Terminals" />
+			<commandNode name="Use" type="Zongsoft.Terminals.Commands.ServicesUseCommand, Zongsoft.Terminals" />
+		</commandNode>
+
+		<commandNode name="Net" />
+		<commandNode name="Security" />
+		<commandNode name="Collections" />
+		<commandNode name="Plugins" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Collections">
+		<commandNode name="Queue" type="Zongsoft.Collections.Commands.QueueCommand, Zongsoft.Terminals">
+			<commandNode.constructor>
+				<parameter type="Zongsoft.Collections.Queue, Zongsoft.CoreLibrary" value="{srv:Queue}" />
+			</commandNode.constructor>
+		</commandNode>
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Collections/Queue">
+		<object name="In" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueInCommand, Zongsoft.Terminals" />
+		<object name="Out" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueOutCommand, Zongsoft.Terminals" />
+		<object name="Peek" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueuePeekCommand, Zongsoft.Terminals" />
+		<object name="Trim" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueTrimCommand, Zongsoft.Terminals" />
+		<object name="Clear" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueClearCommand, Zongsoft.Terminals" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Plugins">
+		<object name="Find" type="Zongsoft.Plugins.Commands.FindCommand, Zongsoft.Terminals.Plugins" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Net">
+		<commandNode name="FtpServer"
+		             type="Zongsoft.Communication.Commands.TcpServerCommand, Zongsoft.Terminals"
+		             listener="{srv:FtpServer, Communication}" />
+
+		<commandNode name="TcpServer"
+		             type="Zongsoft.Communication.Commands.TcpServerCommand, Zongsoft.Terminals"
+		             listener="{srv:TcpServer, Communication}" />
+
+		<commandNode name="TcpClient"
+		             type="Zongsoft.Communication.Commands.TcpClientCommand, Zongsoft.Terminals"
+		             client="{srv:TcpClient, Communication}" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Net/FtpServer">
+		<object name="Stop" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
+		<object name="Start" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
+		<object name="Status" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Net/TcpServer">
+		<object name="Send" services="../@Command" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
+		<object name="Stop" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
+		<object name="Start" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
+		<object name="Status" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
+	</extension>
+
+	<extension path="/Workbench/Terminal/Commands/Net/TcpClient">
+		<object name="Send" sender="../@Command.Client" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
+		<object name="Connect" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientConnectCommand, Zongsoft.Terminals" />
+		<object name="Disconnect" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientDisconnectCommand, Zongsoft.Terminals" />
+		<object name="Status" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientStatusCommand, Zongsoft.Terminals" />
+	</extension>
+</plugin>
