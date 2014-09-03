@@ -90,7 +90,7 @@ namespace Zongsoft.Plugins.Commands
 			if(value != null)
 			{
 				terminal.WriteLine();
-				var serializer = new Zongsoft.Runtime.Serialization.Serializer(new Zongsoft.Runtime.Serialization.SerializationWriter(), new Zongsoft.Runtime.Serialization.SerializerSettings(maxDepth, Runtime.Serialization.SerializationMembers.All));
+				var serializer = new Zongsoft.Runtime.Serialization.Serializer(new Zongsoft.Runtime.Serialization.TextSerializationWriter(), new Zongsoft.Runtime.Serialization.SerializerSettings(maxDepth, Runtime.Serialization.SerializationMembers.All));
 				serializer.Serialize(terminal.OutputStream, value);
 			}
 		}
