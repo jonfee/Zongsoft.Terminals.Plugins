@@ -38,7 +38,7 @@
 	<extension path="/Workbench/Terminal/Commands/Collections">
 		<commandNode name="Queue" type="Zongsoft.Collections.Commands.QueueCommand, Zongsoft.Terminals">
 			<commandNode.constructor>
-				<parameter type="Zongsoft.Collections.Queue, Zongsoft.CoreLibrary" value="{srv:Queue}" />
+				<parameter type="Zongsoft.Collections.IQueue, Zongsoft.CoreLibrary" value="{srv:Queue}" />
 			</commandNode.constructor>
 		</commandNode>
 	</extension>
