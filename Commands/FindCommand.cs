@@ -61,11 +61,8 @@ namespace Zongsoft.Plugins.Commands
 		#region 重写方法
 		protected override void Run(TerminalCommandContext context)
 		{
-			if(context.Arguments.Length < 1 || string.IsNullOrEmpty(context.Arguments[0].ToString()))
-			{
-				context.Terminal.Error.WriteLine(ResourceUtility.GetString("${Text.Commands.MissingPluginPath}"));
-				return;
-			}
+			if(context.Arguments.Length < 1)
+				throw new CommandException(ResourceUtility.GetString("${Text.Commands.MissingPluginPath}"));
 
 			var node = _pluginContext.PluginTree.Find(context.Arguments[0].ToString());
 

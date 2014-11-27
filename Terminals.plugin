@@ -49,10 +49,13 @@
 		<object name="Peek" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueuePeekCommand, Zongsoft.Terminals" />
 		<object name="Trim" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueTrimCommand, Zongsoft.Terminals" />
 		<object name="Clear" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueClearCommand, Zongsoft.Terminals" />
+		<object name="Count" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueCountCommand, Zongsoft.Terminals" />
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Plugins">
+		<object name="List" type="Zongsoft.Plugins.Commands.ListCommand, Zongsoft.Terminals.Plugins" />
 		<object name="Find" type="Zongsoft.Plugins.Commands.FindCommand, Zongsoft.Terminals.Plugins" />
+		<object name="Tree" type="Zongsoft.Plugins.Commands.TreeCommand, Zongsoft.Terminals.Plugins" />
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Net">

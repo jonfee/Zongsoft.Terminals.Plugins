@@ -141,7 +141,25 @@
   <data name="Text.Commands.InvalidPluginPath" xml:space="preserve">
     <value>无效的插件路径：“{0}”。</value>
   </data>
+  <data name="Text.Commands.ListCommand" xml:space="preserve">
+    <value>插件列表显示命令</value>
+  </data>
+  <data name="Text.Commands.ListCommand.Description" xml:space="preserve">
+    <value>逐级显示当前应用程序中的所有插件信息。</value>
+  </data>
   <data name="Text.Commands.MissingPluginPath" xml:space="preserve">
     <value>缺少插件路径参数。</value>
+  </data>
+  <data name="Text.Commands.TreeCommand" xml:space="preserve">
+    <value>插件树信息显示命令</value>
+  </data>
+  <data name="Text.Commands.TreeCommand.Description" xml:space="preserve">
+    <value>逐级显示当前应用程序插件树节点的信息。</value>
+  </data>
+  <data name="Text.Commands.TreeCommand.Options.FullPath" xml:space="preserve">
+    <value>显示插件树节点的完整全路径。</value>
+  </data>
+  <data name="Text.Commands.TreeCommand.Options.MaxDepth" xml:space="preserve">
+    <value>显示插件树的最大深度，默认是3。</value>
   </data>
 </root>
