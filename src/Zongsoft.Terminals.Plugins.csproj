@@ -41,17 +41,17 @@
     <Reference Include="System.Xml" />
     <Reference Include="Zongsoft.CoreLibrary, Version=3.1.1310.37512, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Zongsoft.CoreLibrary\bin\Debug\Zongsoft.CoreLibrary.dll</HintPath>
+      <HintPath>..\..\Zongsoft.CoreLibrary\src\bin\Debug\Zongsoft.CoreLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Zongsoft.Plugins, Version=3.2.14127.42223, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Zongsoft.Plugins\bin\Debug\Zongsoft.Plugins.dll</HintPath>
+      <HintPath>..\..\Zongsoft.Plugins\src\bin\Debug\Zongsoft.Plugins.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Zongsoft.Terminals, Version=3.1.1310.1637, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Zongsoft.Terminals\bin\Debug\Zongsoft.Terminals.dll</HintPath>
+      <HintPath>..\..\Zongsoft.Terminals\src\bin\Debug\Zongsoft.Terminals.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -68,7 +68,7 @@
     <EmbeddedResource Include="Resources.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Terminals.plugin">
+    <None Include="..\Terminals.plugin">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
