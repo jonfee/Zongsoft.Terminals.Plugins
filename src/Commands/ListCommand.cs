@@ -58,7 +58,7 @@ namespace Zongsoft.Plugins.Commands
 		#endregion
 
 		#region 重写方法
-		protected override void Run(TerminalCommandContext context)
+		protected override void OnExecute(TerminalCommandContext context)
 		{
 			int index = 0;
 
