@@ -107,6 +107,9 @@ namespace Zongsoft.Terminals.Plugins
 
 			//启动命令运行器
 			executor.Run();
+
+			//关闭命令执行器
+			this.Close();
 		}
 		#endregion
 
