@@ -24,14 +24,17 @@
 		<object name="Shell" type="Zongsoft.Terminals.Commands.ShellCommand, Zongsoft.CoreLibrary" />
 		<object name="Assembly" type="Zongsoft.Terminals.Commands.AssemblyCommand, Zongsoft.Terminals" />
 
+		<commandNode name="Services" type="Zongsoft.Terminals.Commands.ServicesCommand, Zongsoft.Terminals" >
+			<commandNode name="Get" type="Zongsoft.Terminals.Commands.ServicesGetCommand, Zongsoft.Terminals" />
+		</commandNode>
+
 		<commandNode name="Sequence" type="Zongsoft.Terminals.Commands.SequenceCommand, Zongsoft.Terminals">
 			<object name="Get" type="Zongsoft.Terminals.Commands.SequenceGetCommand, Zongsoft.Terminals" />
 			<object name="Reset" type="Zongsoft.Terminals.Commands.SequenceResetCommand, Zongsoft.Terminals" />
 		</commandNode>
 
-		<commandNode name="Services" type="Zongsoft.Terminals.Commands.ServicesCommand, Zongsoft.Terminals" >
-			<commandNode name="Get" type="Zongsoft.Terminals.Commands.ServicesGetCommand, Zongsoft.Terminals" />
-			<commandNode name="Use" type="Zongsoft.Terminals.Commands.ServicesUseCommand, Zongsoft.Terminals" />
+		<commandNode name="Options" type="Zongsoft.Options.Commands.OptionsCommand, Zongsoft.Terminals">
+			<object name="Get" type="Zongsoft.Options.Commands.OptionsGetCommand, Zongsoft.Terminals" />
 		</commandNode>
 
 		<commandNode name="Net" />
