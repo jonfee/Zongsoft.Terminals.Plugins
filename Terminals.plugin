@@ -28,7 +28,7 @@
 			<commandNode name="Get" type="Zongsoft.Terminals.Commands.ServicesGetCommand, Zongsoft.Terminals" />
 		</commandNode>
 
-		<commandNode name="Sequence" type="Zongsoft.Terminals.Commands.SequenceCommand, Zongsoft.Terminals">
+		<commandNode name="Sequence" sequence="{srv:.}" type="Zongsoft.Terminals.Commands.SequenceCommand, Zongsoft.Terminals">
 			<object name="Get" type="Zongsoft.Terminals.Commands.SequenceGetCommand, Zongsoft.Terminals" />
 			<object name="Reset" type="Zongsoft.Terminals.Commands.SequenceResetCommand, Zongsoft.Terminals" />
 		</commandNode>
