@@ -52,12 +52,12 @@
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Collections/Queue">
-		<object name="In" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueInCommand, Zongsoft.Terminals" />
-		<object name="Out" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueOutCommand, Zongsoft.Terminals" />
-		<object name="Peek" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueuePeekCommand, Zongsoft.Terminals" />
-		<object name="Trim" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueTrimCommand, Zongsoft.Terminals" />
-		<object name="Clear" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueClearCommand, Zongsoft.Terminals" />
-		<object name="Count" queue="../@Command.Queue" type="Zongsoft.Collections.Commands.QueueCountCommand, Zongsoft.Terminals" />
+		<object name="In" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueueInCommand, Zongsoft.Terminals" />
+		<object name="Out" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueueOutCommand, Zongsoft.Terminals" />
+		<object name="Peek" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueuePeekCommand, Zongsoft.Terminals" />
+		<object name="Trim" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueueTrimCommand, Zongsoft.Terminals" />
+		<object name="Clear" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueueClearCommand, Zongsoft.Terminals" />
+		<object name="Count" queue="{path:../@Command.Queue}" type="Zongsoft.Collections.Commands.QueueCountCommand, Zongsoft.Terminals" />
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Plugins">
@@ -81,22 +81,22 @@
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Net/FtpServer">
-		<object name="Stop" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
-		<object name="Start" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
-		<object name="Status" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
+		<object name="Stop" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
+		<object name="Start" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
+		<object name="Status" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Net/TcpServer">
-		<object name="Send" services="../@Command" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
-		<object name="Stop" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
-		<object name="Start" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
-		<object name="Status" listener="../@Command.Listener" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
+		<object name="Send" services="{path:../@Command}" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
+		<object name="Stop" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.ServerStopCommand, Zongsoft.Terminals" />
+		<object name="Start" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.ServerStartCommand, Zongsoft.Terminals" />
+		<object name="Status" listener="{path:../@Command.Listener}" type="Zongsoft.Communication.Commands.TcpServerStatusCommand, Zongsoft.Terminals" />
 	</extension>
 
 	<extension path="/Workbench/Terminal/Commands/Net/TcpClient">
-		<object name="Send" sender="../@Command.Client" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
-		<object name="Connect" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientConnectCommand, Zongsoft.Terminals" />
-		<object name="Disconnect" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientDisconnectCommand, Zongsoft.Terminals" />
-		<object name="Status" client="../@Command.Client" type="Zongsoft.Communication.Commands.TcpClientStatusCommand, Zongsoft.Terminals" />
+		<object name="Send" sender="{path:../@Command.Client}" type="Zongsoft.Communication.Commands.SendCommand, Zongsoft.Terminals" />
+		<object name="Connect" client="{path:../@Command.Client}" type="Zongsoft.Communication.Commands.TcpClientConnectCommand, Zongsoft.Terminals" />
+		<object name="Disconnect" client="{path:../@Command.Client}" type="Zongsoft.Communication.Commands.TcpClientDisconnectCommand, Zongsoft.Terminals" />
+		<object name="Status" client="{path:../@Command.Client}" type="Zongsoft.Communication.Commands.TcpClientStatusCommand, Zongsoft.Terminals" />
 	</extension>
 </plugin>
