@@ -39,17 +39,35 @@ namespace Zongsoft.Terminals.Plugins
 		public readonly static ApplicationContext Current = new ApplicationContext();
 		#endregion
 
+		#region 成员字段
+		private Zongsoft.Options.Configuration.OptionConfiguration _configuration;
+		#endregion
+
 		#region 私有构造
 		private ApplicationContext() : base("Zongsoft.Terminals.Plugins")
 		{
-			string filePaht = Path.Combine(this.ApplicationDirectory, Assembly.GetEntryAssembly().GetName().Name) + ".option";
-
-			if(File.Exists(filePaht))
-				this.Configuration = Options.Configuration.OptionConfiguration.Load(filePaht);
 		}
 		#endregion
 
 		#region 重写方法
+		public override Zongsoft.Options.Configuration.OptionConfiguration Configuration
+		{
+			get
+			{
+				if(_configuration == null)
+				{
+					string filePaht = Path.Combine(this.ApplicationDirectory, Assembly.GetEntryAssembly().GetName().Name) + ".option";
+
+					if(File.Exists(filePaht))
+						_configuration = Options.Configuration.OptionConfiguration.Load(filePaht);
+					else
+						_configuration = new Options.Configuration.OptionConfiguration(filePaht);
+				}
+
+				return _configuration;
+			}
+		}
+
 		protected override IWorkbenchBase CreateWorkbench(string[] args)
 		{
 			PluginTreeNode node = this.PluginContext.PluginTree.Find(this.PluginContext.Settings.WorkbenchPath);
