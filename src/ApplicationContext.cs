@@ -36,7 +36,7 @@ namespace Zongsoft.Terminals.Plugins
 	public class ApplicationContext : Zongsoft.Plugins.PluginApplicationContext
 	{
 		#region 静态变量
-		public readonly static ApplicationContext Current = new ApplicationContext();
+		public new readonly static ApplicationContext Current = new ApplicationContext();
 		#endregion
 
 		#region 成员字段
@@ -46,6 +46,7 @@ namespace Zongsoft.Terminals.Plugins
 		#region 私有构造
 		private ApplicationContext() : base("Zongsoft.Terminals.Plugins")
 		{
+			Zongsoft.ComponentModel.ApplicationContextBase.Current = this;
 		}
 		#endregion
 
